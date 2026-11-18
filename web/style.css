@@ -1,0 +1,78 @@
+/*
+VOICE: holographique, calme, façon interface de Jarvis
+IDEA: chaque fenêtre est un nœud d'énergie posé sur un même écran partagé
+PICTURE: une sphère de particules en rotation, anneaux et graduations ; un lien lumineux vers les autres fenêtres
+COLOUR and TYPE: fond nuit #02040a, une couleur par fenêtre, fusion additive ; Share Tech Mono
+LAYOUT: plein écran, petit HUD en haut à gauche, bouton en bas
+*/
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #02040a;
+  overflow: hidden;
+  color: #bfe6ff;
+  font:
+    13px/1.6 "Share Tech Mono",
+    ui-monospace,
+    Menlo,
+    Consolas,
+    monospace;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+#hud {
+  position: fixed;
+  top: 14px;
+  left: 16px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+#hud .id {
+  font-size: 15px;
+  color: var(--c, #3af);
+}
+#hud .dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c, #3af);
+  box-shadow: 0 0 10px var(--c, #3af);
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+#bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+button {
+  font: inherit;
+  color: #02040a;
+  background: var(--c, #3af);
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  min-height: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 18px -4px var(--c, #3af);
+}
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+#tip {
+  opacity: 0.65;
+  max-width: 560px;
+}
